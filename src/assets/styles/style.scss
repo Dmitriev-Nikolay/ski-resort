@@ -1,0 +1,120 @@
+@import "normalize";
+@import "variables";
+
+html {
+  height: 100%;
+  background: var(--bg-gray);
+}
+
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--white);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--grey-light);
+    border-radius: 5px;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+// Анимация страницы логина
+
+.animation-login-page-enter {
+  opacity: 0;
+  transform: scale(2.5);
+}
+
+.animation-login-page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.animation-login-page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.animation-login-page-exit-active {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+// Анимация остальных страниц
+
+.animation-content-page {
+  position: absolute;
+  width: 100%;
+}
+
+.animation-content-page-enter-active {
+  animation: fade-in 0.8s forwards;
+}
+
+.animation-content-page-exit-active {
+  animation: fade-out 0.8s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+// Анимация появления имени в карточках
+
+.assigned-visitor-enter {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.assigned-visitor-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+// Анимация появления карточек
+
+.mini-card-enter {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.mini-card-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
+}

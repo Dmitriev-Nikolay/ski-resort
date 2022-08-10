@@ -1,0 +1,45 @@
+:root {
+	--blue: #4158f6;
+	--grey: #c8c8c8;
+	--grey-input: #f3f3f3;
+	--grey-light: #d3d3d3;
+	--grey-menu: #bdbdbd;
+	--red-error: #ffcdd2;
+	--red-error-text: #d32f2f;
+	--white: #ffffff;
+	--bg-gray: #e5e5e5;
+	--scale-small: scale(1.05);
+	--scale-medium: scale(1.1);
+	--transition-3: 0.3s;
+	--transition-5: 0.5s;
+	--grey-text: #a0a0a08a;
+	--toastify-color-success: var(--blue);
+
+	--max-width: 928px;
+	--max-width-actual: calc(var(--max-width) + ((var(--spacer) * 6) * 2));
+
+	// default
+	--spacer: 8px;
+
+	@media screen and (max-width: 971px) {
+		--spacer: 7px;
+	}
+
+	@media screen and (max-width: 769px) {
+		--spacer: 6px;
+	}
+}
+
+// Уведомления
+
+.Toastify__toast {
+	border-radius: 8px;
+}
+
+.Toastify__toast-container {
+	@media screen and (max-width: 481px) {
+		width: 80vw;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
